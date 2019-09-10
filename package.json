@@ -1,0 +1,30 @@
+{
+  "name": "gh-find-current-pr",
+  "version": "1.0.0",
+  "description": "Github Action for finding the Pull Request (PR) associated with the current SHA.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwalton/gh-find-current-pr.git"
+  },
+  "keywords": [
+    "github",
+    "actions",
+    "github actions",
+    "pull request",
+    "PR"
+  ],
+  "author": "Jason Walton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jwalton/gh-find-current-pr/issues"
+  },
+  "homepage": "https://github.com/jwalton/gh-find-current-pr#readme",
+  "dependencies": {
+    "@actions/core": "^1.1.0",
+    "@actions/github": "^1.1.0"
+  }
+}

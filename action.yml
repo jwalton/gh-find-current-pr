@@ -1,0 +1,18 @@
+name: gh-find-current-pr
+author: jwalton
+description: Find a PR associated with the current commit.
+inputs:
+  github-token:
+    description: The GitHub token used to create an authenticated client.
+  sha:
+    description: Sha to get PR for.  Defaults to current sha.
+    required: false
+outputs:
+  pr:
+    description: The PR if one was found. (e.g. '345' for #345)
+runs:
+  using: node12
+  main: 'main.js'
+branding:
+  icon: git-pull-request
+  color: blue
