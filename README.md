@@ -6,7 +6,8 @@ If the event is a `pull_request`, it's very easy to get the current PR number
 from the context via `${{ github.event.number }}`, but unfortunately this
 information does not seem to be readily available for a `push` event.  This
 action sends a request to GitHub to find the PR associated with the current SHA,
-and returns it in the `pr` output.
+and returns it in the `pr` output.  `pr` will be an empty string if there is no
+PR.
 
 ## Usage
 
