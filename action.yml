@@ -1,4 +1,4 @@
-name: gh-find-current-pr
+name: Find Current Pull Request
 author: jwalton
 description: Find a PR associated with the current commit.
 inputs:
