@@ -9,7 +9,13 @@ inputs:
     required: false
 outputs:
   pr:
-    description: The PR if one was found. (e.g. '345' for #345)
+    description: The PR if one was found. (e.g. '345' for #345) [Deprecated: Please use number instead]
+  number:
+    description: The PR's number if the PR was found (e.g. '345' for #345)
+  title:
+    description: The PR's title if the PR was found
+  body:
+    description: The PR's body if the PR was found
 runs:
   using: node12
   main: 'main.js'
