@@ -12,9 +12,12 @@ async function main() {
         commit_sha: sha || context.sha,
     });
 
-    const pr = result.data.length > 0 && result.data[0].number;
+    const pr = result.data.length > 0 && result.data[0];
 
-    core.setOutput('pr', pr || '');
+    core.setOutput('pr', pr && pr.number || '');
+    core.setOutput('number', pr && pr.number || '');
+    core.setOutput('title', pr && pr.title || '');
+    core.setOutput('body', pr && pr.body || '');
 }
 
 main().catch(err => core.setFailed(err.message));
