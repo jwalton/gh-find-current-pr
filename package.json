@@ -1,6 +1,6 @@
 {
   "name": "gh-find-current-pr",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Github Action for finding the Pull Request (PR) associated with the current SHA.",
   "main": "main.js",
   "scripts": {
