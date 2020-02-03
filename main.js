@@ -18,6 +18,12 @@ async function main() {
     core.setOutput('number', pr && pr.number || '');
     core.setOutput('title', pr && pr.title || '');
     core.setOutput('body', pr && pr.body || '');
+    if (pr && pr.labels) {
+        core.setOutput('labels', pr.labels.map(label => label.name));
+        pr.labels.forEach((label) => core.setOutput(
+            `label_${label.name}`, true
+        ));
+    }
 }
 
 main().catch(err => core.setFailed(err.message));

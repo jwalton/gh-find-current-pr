@@ -10,6 +10,9 @@ and returns its number in the `number` output. `number` will be an empty string 
 PR.
 
 Additionnaly, `title` and `body` outputs are available as well to get the respective title and body of the PR.
+If the PR can be resolved, all labels will be present in the output:
+- as `labels` being an array of all label names
+- as `label_<name>` and set to `true`
 
 ## Usage
 
