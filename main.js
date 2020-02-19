@@ -12,7 +12,7 @@ async function main() {
         commit_sha: sha || context.sha,
     });
 
-    const pr = result.data.length > 0 && result.data[0];
+    const pr = result.data.length > 0 && result.data.filter(el => el.state === 'open')[0];
 
     core.setOutput('pr', pr && pr.number || '');
     core.setOutput('number', pr && pr.number || '');
