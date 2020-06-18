@@ -9,7 +9,7 @@ action sends a request to GitHub to find the PR associated with the current SHA,
 and returns its number in the `number` output. `number` will be an empty string if there is no
 PR.
 
-Additionnaly, `title` and `body` outputs are available as well to get the respective title and body of the PR.
+Additionally, `title` and `body` outputs are available as well to get the respective title and body of the PR.
 
 ## Usage
 
