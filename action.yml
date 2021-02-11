@@ -3,10 +3,11 @@ author: jwalton
 description: Find a PR associated with the current commit.
 inputs:
   github-token:
-    description: The GitHub token used to create an authenticated client.
+    description: The GitHub token used to create an authenticated client.  Defaults to github provided token.
+    default: ${{ github.token }}
   sha:
     description: Sha to get PR for.  Defaults to current sha.
-    required: false
+    default: ${{ github.sha }}
 outputs:
   pr:
     description: The PR if one was found. (e.g. '345' for #345) [Deprecated: Please use number instead]
