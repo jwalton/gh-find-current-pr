@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/jwalton/gh-find-current-pr#readme",
   "dependencies": {
-    "@actions/core": "^1.1.0",
-    "@actions/github": "^1.1.0"
+    "@actions/core": "^1.3.0",
+    "@actions/github": "^5.0.0"
   }
 }
