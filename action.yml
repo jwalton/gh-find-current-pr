@@ -3,12 +3,15 @@ author: jwalton
 description: Find a PR associated with the current commit.
 inputs:
   github-token:
+    required: false
     description: The GitHub token used to create an authenticated client.  Defaults to github provided token.
     default: ${{ github.token }}
   state:
+    required: false
     description: The state of the PR to return.  One of "open", "closed", or "all".
     default: 'open'
   sha:
+    required: false
     description: Sha to get PR for.  Defaults to current sha.
     default: ${{ github.sha }}
 outputs:
