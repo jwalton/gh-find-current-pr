@@ -11,6 +11,9 @@ PR.
 
 Additionally, `title` and `body` outputs are available as well to get the respective title and body of the PR.
 
+By default, `gh-find-current-pr` will only return open PRs.  You can pass in a
+`state` parameter to pick "open", "closed", or "all" PRs.
+
 ## Usage
 
 ```yaml
@@ -19,6 +22,9 @@ Additionally, `title` and `body` outputs are available as well to get the respec
       # Find the PR associated with this push, if there is one.
       - uses: jwalton/gh-find-current-pr@v1
         id: findPr
+        with:
+          # Can be "open", "closed", or "all".  Defaults to "open".
+          state: open
       # This will echo "Your PR is 7", or be skipped if there is no current PR.
       - run: echo "Your PR is ${PR}"
         if: success() && steps.findPr.outputs.number

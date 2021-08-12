@@ -5,6 +5,9 @@ inputs:
   github-token:
     description: The GitHub token used to create an authenticated client.  Defaults to github provided token.
     default: ${{ github.token }}
+  state:
+    description: The state of the PR to return.  One of "open", "closed", or "all".
+    default: 'open'
   sha:
     description: Sha to get PR for.  Defaults to current sha.
     default: ${{ github.sha }}
