@@ -12,8 +12,8 @@ inputs:
     default: 'open'
   sha:
     required: false
-    description: Sha to get PR for.  Defaults to current sha.
-    default: ${{ github.sha }}
+    description: SHA to get PR for. Defaults to current pull request SHA or current SHA.
+    default: ${{ github.event.pull_request.head.sha || github.sha }}
 outputs:
   pr:
     description: The PR if one was found. (e.g. '345' for #345) [Deprecated: Please use number instead]
