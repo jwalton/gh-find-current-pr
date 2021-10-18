@@ -23,7 +23,6 @@ async function main() {
     core.setOutput('number', (pr && pr.number) || '');
     core.info(`Setting output: title: ${(pr && pr.title) || ''}`);
     core.setOutput('title', (pr && pr.title) || '');
-    core.info(`Setting output: body: ${(pr && pr.body) || ''}`);
     core.setOutput('body', (pr && pr.body) || '');
 }
 
