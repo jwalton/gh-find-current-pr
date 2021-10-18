@@ -17,9 +17,13 @@ async function main() {
     const prs = result.data.filter((el) => state === 'all' || el.state === state);
     const pr = prs[0];
 
+    core.info(`Setting output: pr: ${(pr && pr.number) || ''}`);
     core.setOutput('pr', (pr && pr.number) || '');
+    core.info(`Setting output: number: ${(pr && pr.number) || ''}`);
     core.setOutput('number', (pr && pr.number) || '');
+    core.info(`Setting output: title: ${(pr && pr.title) || ''}`);
     core.setOutput('title', (pr && pr.title) || '');
+    core.info(`Setting output: body: ${(pr && pr.body) || ''}`);
     core.setOutput('body', (pr && pr.body) || '');
 }
 
