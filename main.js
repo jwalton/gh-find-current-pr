@@ -17,6 +17,8 @@ async function main() {
     const prs = result.data.filter((el) => state === 'all' || el.state === state);
     const pr = prs[0];
 
+    core.info(`Setting output: draft: ${(pr && pr.draft) || ''}`);
+    core.setOutput('draft', (pr && pr.draft) || '');
     core.info(`Setting output: pr: ${(pr && pr.number) || ''}`);
     core.setOutput('pr', (pr && pr.number) || '');
     core.info(`Setting output: number: ${(pr && pr.number) || ''}`);
