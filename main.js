@@ -15,7 +15,9 @@ async function main() {
     });
 
     const prs = result.data.filter((el) => state === 'all' || el.state === state);
-    const pr = prs[0];
+    const pr = prs.find(el => {
+        return context.payload.ref === `refs/heads/${el.head.ref}`;
+    });
 
     core.info(`Setting output: draft: ${(pr && pr.draft) || ''}`);
     core.setOutput('draft', (pr && pr.draft) || '');
