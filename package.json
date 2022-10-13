@@ -1,30 +1,50 @@
 {
-  "name": "gh-find-current-pr",
-  "version": "1.2.0",
-  "description": "GitHub Action for finding the Pull Request (PR) associated with the current SHA.",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jwalton/gh-find-current-pr.git"
-  },
-  "keywords": [
-    "github",
-    "actions",
-    "github actions",
-    "pull request",
-    "PR"
-  ],
-  "author": "Jason Walton",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jwalton/gh-find-current-pr/issues"
-  },
-  "homepage": "https://github.com/jwalton/gh-find-current-pr#readme",
-  "dependencies": {
-    "@actions/core": "^1.3.0",
-    "@actions/github": "^5.0.0"
-  }
+    "name": "gh-find-current-pr",
+    "version": "1.2.0",
+    "description": "GitHub Action for finding the Pull Request (PR) associated with the current SHA.",
+    "main": "lib/main.js",
+    "scripts": {
+        "build": "tsc",
+        "clean": "rm -rf lib dist",
+        "format": "prettier --write \"**/*.ts\"",
+        "lint": "eslint src/**/*.ts",
+        "package": "ncc build --source-map --license licenses.txt",
+        "all": "npm run format && npm run clean && npm run build && npm run lint && npm run package",
+        "semantic-release": "semantic-release"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jwalton/gh-find-current-pr.git"
+    },
+    "keywords": [
+        "github",
+        "actions",
+        "github actions",
+        "pull request",
+        "PR"
+    ],
+    "author": "Jason Walton",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jwalton/gh-find-current-pr/issues"
+    },
+    "homepage": "https://github.com/jwalton/gh-find-current-pr#readme",
+    "dependencies": {
+        "@actions/core": "^1.3.0",
+        "@actions/github": "^5.0.0"
+    },
+    "devDependencies": {
+        "@semantic-release/exec": "^6.0.3",
+        "@semantic-release/git": "^10.0.1",
+        "@types/node": "^18.8.5",
+        "@typescript-eslint/eslint-plugin": "^5.40.0",
+        "@typescript-eslint/parser": "^5.40.0",
+        "@vercel/ncc": "^0.34.0",
+        "eslint": "^8.25.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-jest": "^27.1.1",
+        "prettier": "^2.7.1",
+        "semantic-release": "^19.0.5",
+        "typescript": "^4.8.4"
+    }
 }

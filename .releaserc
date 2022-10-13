@@ -1,0 +1,36 @@
+{
+    "branches": [
+        "master"
+    ],
+    "plugins": [
+        "@semantic-release/commit-analyzer",
+        [
+            "@semantic-release/npm",
+            {
+                "npmPublish": false
+            }
+        ],
+        "@semantic-release/release-notes-generator",
+        [
+            "@semantic-release/git",
+            {
+                "assets": [
+                    "package.json",
+                    "package-lock.json",
+                    "dist/index.js",
+                    "dist/index.js.map",
+                    "dist/sourcemap-register.js",
+                    "dist/licenses.txt"
+                ],
+                "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+            }
+        ],
+        "@semantic-release/github",
+        [
+            "@semantic-release/exec",
+            {
+                "success": "./bin/retagMajorVersion.sh"
+            }
+        ]
+    ]
+}

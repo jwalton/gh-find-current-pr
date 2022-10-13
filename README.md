@@ -1,5 +1,7 @@
 # gh-find-current-pr
 
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
 This action tries to figure out the current PR.
 
 If the event is a `pull_request`, it's very easy to get the current PR number

@@ -25,7 +25,7 @@ outputs:
     description: The PR's body if the PR was found
 runs:
   using: node12
-  main: 'main.js'
+  main: 'dist/index.js'
 branding:
   icon: git-pull-request
   color: blue
