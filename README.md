@@ -20,9 +20,9 @@ By default, `gh-find-current-pr` will only return open PRs.  You can pass in a
 
 ```yaml
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       # Find the PR associated with this push, if there is one.
-      - uses: jwalton/gh-find-current-pr@v1
+      - uses: jwalton/gh-find-current-pr@main
         id: findPr
         with:
           # Can be "open", "closed", or "all".  Defaults to "open".
