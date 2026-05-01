@@ -24,6 +24,7 @@ async function main() {
             return context.payload.ref === `refs/heads/${el.head.ref}`;
         }) || prs[0];
 
+    core.setOutput('payload', pr);
     core.info(`Setting output: draft: ${(pr && pr.draft) || ''}`);
     core.setOutput('draft', (pr && pr.draft) || '');
     core.info(`Setting output: pr: ${(pr && pr.number) || ''}`);
